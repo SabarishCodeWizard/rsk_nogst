@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice History - PR Fabrics</title>
+    <link rel="stylesheet" href="css/invoice-history.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+</head>
+
+<body>
+    <div class="main"></div>
+    <div class="container">
+        <div class="controls">
+            <h1 class="bill-system-header">
+                <a href="index.html" class="brand-name">PR Fabrics</a>
+                <span class="system-name">Invoice History</span>
+            </h1>
+            <div class="navigation-buttons">
+                <a href="index.html" class="view-history-btn"> <i class="fas fa-file-invoice"></i> New Bill</a>
+                <a href="invoice-history.html" class="dashboard"><i class="fas fa-history"></i> Invoice History</a>
+                <a href="customer-details.html" class="view-history-btn"> <i class="fas fa-users"></i> Customer Details</a>
+                <a href="shortcut.html" class="view-history-btn"> <i class="fas fa-bolt"></i> Product Shortcuts</a>
+                <a href="recycle-bin.html" class="view-history-btn"> <i class="fas fa-trash"></i> Recycle Bin</a>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </div>
+        <div class="main-content-wrapper">
+            <div class="invoice-history-container">
+                <h2>Invoice History</h2>
+
+                <div class="recent-invoices-section">
+                    <h3>Recent Invoices</h3>
+                    <div class="recent-invoices-list" id="recentInvoicesList">
+                        </div>
+                </div>
+
+                <div class="customer-statement-section">
+                    <h3>Customer Statement</h3>
+                    <div class="customer-search">
+                        <input type="text" id="customerSearch"
+                            placeholder="Enter customer name to generate combined statement">
+                        <button id="generateCustomerStatement">Generate Combined Statement</button>
+                        <button id="clearCustomerStatement" class="btn-clear">Clear</button>
+                    </div>
+                    <div id="customerStatementResults" class="customer-statement-results">
+                        </div>
+                </div>
+
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <input type="text" id="searchInput" placeholder="Search by customer name or invoice number">
+                    </div>
+                    <div class="filter-group">
+                        <input type="number" id="fromInvoiceNo" placeholder="From Invoice No" min="1">
+                        <span class="range-separator">to</span>
+                        <input type="number" id="toInvoiceNo" placeholder="To Invoice No" min="1">
+                    </div>
+                    <div class="filter-group">
+                        <input type="date" id="fromDate" placeholder="From Date">
+                        <span class="range-separator">to</span>
+                        <input type="date" id="toDate" placeholder="To Date">
+                    </div>
+                    <div class="filter-actions">
+                        <button id="searchBtn">Search</button>
+                        <button id="clearFilters">Clear Filters</button>
+                    </div>
+                </div>
+
+                <div class="invoices-list" id="invoicesList">
+                    </div>
+            </div>
+        </div>
+        </div>
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+    <script src="js/db.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/invoice-history.js"></script>
+</body>
+
+</html>

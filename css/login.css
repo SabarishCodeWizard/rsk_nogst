@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    /* Important: Remove default body margin */
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Hover and Active State for the container */
+.container:hover .top:before,
+.container:hover .top:after,
+.container:hover .bottom:before,
+.container:hover .bottom:after,
+.container:active .top:before,
+.container:active .top:after,
+.container:active .bottom:before,
+.container:active .bottom:after {
+    margin-left: 200px;
+    transform-origin: -200px 50%;
+    transition-delay: 0s;
+}
+
+.container:hover .center,
+.container:active .center {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+/* Base styles for Top and Bottom background elements */
+.top:before,
+.top:after,
+.bottom:before,
+.bottom:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 200vmax;
+    height: 200vmax;
+    top: 50%;
+    left: 50%;
+    margin-top: -100vmax;
+    transform-origin: 0 50%;
+    transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+    z-index: 10;
+    opacity: 0.65;
+    transition-delay: 0.2s;
+}
+
+/* Top elements */
+.top:before {
+    transform: rotate(45deg);
+    background: #e46569;
+}
+
+.top:after {
+    transform: rotate(135deg);
+    background: #ecaf81;
+}
+
+/* Bottom elements */
+.bottom:before {
+    transform: rotate(-45deg);
+    background: #60b8d4;
+}
+
+.bottom:after {
+    transform: rotate(-135deg);
+    background: #3745b5;
+}
+
+/* Center container for the login form */
+.center {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    /* Reduced height to better fit content, adjust as needed */
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+    transition-delay: 0s;
+    color: #333;
+    background-color: white;
+    /* Added background for visibility over the moving shapes */
+    border-radius: 8px;
+    /* Optional: adds a slight rounded corner */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Optional: adds a slight shadow */
+    z-index: 20;
+    /* Keep it above the background shapes */
+}
+
+.center input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 1px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+/* Custom styles for form structure inside .center */
+.logo-img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.center h1 {
+    margin: 5px 0 0;
+    font-size: 2em;
+}
+
+.center .subtitle {
+    margin: 0 0 20px;
+    color: #777;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    background-color: white;
+    padding: 0;
+}
+
+.input-group input {
+    border: none;
+    flex-grow: 1;
+    margin: 0;
+    padding: 15px 10px;
+}
+
+.input-group .input-icon {
+    padding: 0 10px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Error Message Styling */
+.error-message {
+    display: none;
+    /* Initially hidden */
+    align-items: center;
+    color: #e46569;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.error-message svg {
+    margin-right: 5px;
+    stroke-width: 2;
+}
+
+/* Login Button Styling */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #3745b5;
+    /* One of the background colors */
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn:hover {
+    background-color: #2b3597;
+}
+
+.login-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Loading State Styling */
+.btn-text {
+    transition: opacity 0.3s;
+}
+
+.login-btn.loading .btn-text {
+    opacity: 0;
+}
+
+.btn-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.login-btn.loading .btn-loader {
+    opacity: 1;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Shake Animation for failed login */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #777;
+}
