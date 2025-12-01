@@ -328,7 +328,7 @@ async function generateCombinedPDFStatement(customerName, invoices) {
         doc.setFontSize(16);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(...primaryColor);
-        doc.text('PR FABRICS', pageWidth / 2, yPos, { align: 'center' });
+        doc.text('RSK ENTERPRISES', pageWidth / 2, yPos, { align: 'center' });
 
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
@@ -1087,7 +1087,7 @@ async function shareCombinedStatementViaWhatsApp(customerName) {
         const customerAddress = mostRecentInvoice.customerAddress;
 
         // Create WhatsApp message with professional formatting
-        const message = `*PR FABRICS - ACCOUNT STATEMENT*
+        const message = `*RSK ENTERPRISES - ACCOUNT STATEMENT*
 *GSTIN: 33CLJPG4331G1ZG*
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1174,7 +1174,7 @@ ${invoicesWithReturns.map(invoice =>
 
 *CONTACT INFORMATION*
 ────────────────────────────────
-🏢 *PR FABRICS*
+🏢 *RSK ENTERPRISES*
 📍 Tirupur
 📞 *Phone: 9952520181*
 
@@ -1215,7 +1215,7 @@ async function shareInvoiceViaWhatsApp(invoiceNo) {
 
         // 1. Header
         let message = `*INVOICE STATEMENT*
-*PR FABRICS*
+*RSK ENTERPRISES*
 GSTIN: 33CLJPG4331G1ZG
 
 ┌${line}
@@ -1307,7 +1307,7 @@ GSTIN: 33CLJPG4331G1ZG
         message += `
 ━━━━━━━━━━━━━━━━━━━━━━
 *CONTACT INFORMATION*
-🏢 *PR FABRICS*
+🏢 *RSK ENTERPRISES*
 📍 Tirupur
 📞 9952520181
 
@@ -2402,7 +2402,7 @@ async function generatePDFStatement(invoiceData, payments) {
         doc.setFontSize(16);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(...primaryColor);
-        doc.text('PR FABRICS', pageWidth / 2, yPos, { align: 'center' });
+        doc.text('RSK ENTERPRISES', pageWidth / 2, yPos, { align: 'center' });
 
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');

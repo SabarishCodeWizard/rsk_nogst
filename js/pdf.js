@@ -195,7 +195,7 @@ class PDFGenerator {
                 }
                 /* Watermark */
                 body::before {
-                    content: "PR FABRICS";
+                    content: "RSK ENTERPRISES";
                     position: fixed;
                     top: 50%;
                     left: 50%;
@@ -426,13 +426,13 @@ class PDFGenerator {
                 <div class="invoice-header">
                     <div class="company-info">
                         <div class="company-details">
-                            <h2>PR FABRICS</h2>
+                            <h2>RSK ENTERPRISES</h2>
                             <p>42/65, THIRUNEELAKANDA PURAM, 1ST STREET,</p>
                             <p>TIRUPUR 641-602 | CELL: 9952520181</p>
                             <p>GSTIN: <b>33CLJPG4331G1ZG</b></p>
                         </div>
                     </div>
-                    <img src="${PDFGenerator.getImageBase64()}" alt="PR Fabrics Logo" class="company-logo">
+                    <img src="${PDFGenerator.getImageBase64()}" alt="RSK ENTERPRISES Logo" class="company-logo">
                     <div class="invoice-title">
                         <h2>INVOICE DETAILS</h2>
                         <div><strong>Invoice No:</strong> ${invoiceData.invoiceNo}</div>
@@ -593,7 +593,7 @@ class PDFGenerator {
                         <p>CUSTOMER SIGNATURE</p>
                     </div>
                     <div class="company-signature">
-                        <p>For PR FABRICS</p>
+                        <p>For RSK ENTERPRISES</p>
                         <p class="signature-line"></p>
                         <p>AUTHORIZED SIGNATORY</p>
                     </div>

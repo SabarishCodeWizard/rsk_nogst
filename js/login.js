@@ -33,7 +33,7 @@
 
                 // Simulate API call delay
                 setTimeout(() => {
-                    if (username === 'prnogst' && password === '1713') {
+                    if (username === 'rayappan' && password === 'rsk') {
                         // Successful login
                         localStorage.setItem('isAuthenticated', 'true');
                         localStorage.setItem('username', username);

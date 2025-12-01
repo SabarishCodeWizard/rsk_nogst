@@ -1174,7 +1174,7 @@ function generateReminderMessage(customer, templateType) {
     switch (templateType) {
         case 'standard':
             subject = 'Payment Reminder';
-            message = `PR FABRICS - ${subject}
+            message = `RSK ENTERPRISES - ${subject}
 
 Dear ${customer.name},
 
@@ -1189,7 +1189,7 @@ Payment Summary:
 
 Please make the payment at your earliest convenience.
 
-PR FABRICS
+RSK ENTERPRISES
 42/65, THIRUNEELAKANDA PURAM, 1ST STREET
 TIRUPUR 641-602
 Phone: 9952520181
@@ -1199,7 +1199,7 @@ This is an automated reminder`;
 
         case 'urgent':
             subject = 'URGENT: Payment Required';
-            message = `PR FABRICS - ${subject}
+            message = `RSK ENTERPRISES - ${subject}
 
 Dear ${customer.name},
 
@@ -1214,7 +1214,7 @@ Payment Summary:
 
 Please clear the outstanding amount immediately to avoid any inconvenience.
 
-PR FABRICS
+RSK ENTERPRISES
 42/65, THIRUNEELAKANDA PURAM, 1ST STREET
 TIRUPUR 641-602
 Phone: 9952520181
@@ -1224,7 +1224,7 @@ Phone: 9952520181
 
         case 'friendly':
             subject = 'Friendly Payment Follow-up';
-            message = `PR FABRICS - ${subject}
+            message = `RSK ENTERPRISES - ${subject}
 
 Hi ${customer.name},
 
@@ -1240,12 +1240,12 @@ Quick Summary:
 Please let us know if you have any questions or need more time.
 
 Best regards,
-PR FABRICS Team
+RSK ENTERPRISES Team
 9952520181`;
             break;
 
         default:
-            message = `PR FABRICS - Payment Reminder
+            message = `RSK ENTERPRISES - Payment Reminder
 
 Dear ${customer.name},
 
@@ -1253,7 +1253,7 @@ Your outstanding balance is ₹${Utils.formatCurrency(customerBalance)}.
 
 Please make the payment at your earliest convenience.
 
-PR FABRICS
+RSK ENTERPRISES
 9952520181`;
     }
 

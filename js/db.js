@@ -9,13 +9,13 @@ class Database {
 
         // Firebase configuration - REPLACE WITH YOUR ACTUAL CONFIG
         this.firebaseConfig = {
-            apiKey: "AIzaSyB4uggcqtYonFXSnl8rUGbsgkk-nqchuy8",
-            authDomain: "prnogst.firebaseapp.com",
-            projectId: "prnogst",
-            storageBucket: "prnogst.firebasestorage.app",
-            messagingSenderId: "517006377488",
-            appId: "1:517006377488:web:a0465788b8bcb4cd7bc095",
-            measurementId: "G-9D28MJCD8N"
+            apiKey: "AIzaSyDkiJ6KJC3NAYIwvEMGAgMOm1F60J3qc_g",
+            authDomain: "rsknogst.firebaseapp.com",
+            projectId: "rsknogst",
+            storageBucket: "rsknogst.firebasestorage.app",
+            messagingSenderId: "692045796924",
+            appId: "1:692045796924:web:167c5f507e68a3e5d71539",
+            measurementId: "G-R5EDG339XG"
         };
     }
 
