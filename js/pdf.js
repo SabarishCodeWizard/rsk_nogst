@@ -179,7 +179,7 @@ class PDFGenerator {
         <!DOCTYPE html>
         <html>
         <head>
-            <title>PR ${invoiceData.invoiceNo}</title>
+            <title>RSK ${invoiceData.invoiceNo}</title>
             <style>
                 body {
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -427,12 +427,12 @@ class PDFGenerator {
                     <div class="company-info">
                         <div class="company-details">
                             <h2>RSK ENTERPRISES</h2>
-                            <p>42/65, THIRUNEELAKANDA PURAM, 1ST STREET,</p>
-                            <p>TIRUPUR 641-602 | CELL: 9952520181</p>
-                            <p>GSTIN: <b>33CLJPG4331G1ZG</b></p>
+                            <p>76(3) PADMAVATHIPURAM, ANGERIPALAYAM ROAD,</p>
+                            <p>TIRUPUR 641-602 | CELL: 8608127349</p>
+                            <p>GSTIN: <b>33EQEPR2516A1ZB    </b></p>
                         </div>
                     </div>
-                    <img src="${PDFGenerator.getImageBase64()}" alt="RSK ENTERPRISES Logo" class="company-logo">
+        
                     <div class="invoice-title">
                         <h2>INVOICE DETAILS</h2>
                         <div><strong>Invoice No:</strong> ${invoiceData.invoiceNo}</div>
